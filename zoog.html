@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  
+  //Makes robot grey and changes stroke to 2
+  fill(200,200,200)
+  strokeWeight(2)
+  stroke(0)
+  
+  //head
+  rectMode(CORNERS)
+  rect(100,100,200,180)
+  
+  //antennas
+  line(80,80,100,100)
+  line(200,100,220,80)
+  ellipse(70,70,30,30)
+  ellipse(230,70,30,30)
+  
+  //eyes
+  fill('white')
+  ellipse(120,120,30,20)
+  ellipse(180,120,30,20)
+  strokeWeight(5)
+  stroke(200,0,0)
+  point(120,120)
+  point(180,120)
+  
+  //mouth
+  stroke(0)
+  strokeWeight(2)
+  rect(120,150,180,180)
+  line(140,150,140,180)
+  line(160,150,160,180)
+  
+  //body
+  fill(200,200,200)
+  rect(100,180,200,300)
+  fill(0)
+  textSize(30)
+  text('B0T',120,230)
+  
+  //arms
+  fill(200,200,200)
+  rect(100,220,140,240)
+  rect(200,220,240,240)
+  
+  //legs
+  rect(100,300,120,340)
+  rect(180,300,200,340)
+  
+  //text
+  fill('white')
+  stroke(0,0,0)
+  curve(240,180,210,160,280,125,300,100)
+  ellipse(300,100,100,55)
+  fill('black')
+  textSize(30)
+  text('Beep!',260,110)
+  
+  
+}
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/DevonL2108/p5js/blob/master/zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
