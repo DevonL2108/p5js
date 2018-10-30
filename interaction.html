@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+      var scale // Set Variables
+var scale2
+var scale3
+var opacity
+var opacity2
+var opacity3
+var opacity4
+var opacity5
+var red
+var green
+var blue
+var circlesize 
+
+function setup() {
+  createCanvas(400, 400) 
+  background(100)
+ 
+  scale = 5 // Define Variables
+  scale2 = 5
+  scale3 = 5
+  opacity = 255
+  opacity2 = 255
+  opacity3 = 0 
+  opacity4 = 255
+  opacity5 = 255
+  red = random(100,255)
+  green = random(100,255)
+  blue = random(100,255)
+  circlesize = 50
+
+}
+
+function draw() {
+
+}
+
+function keyPressed() {
+  opacity3 = 0
+  background(100)
+  
+  stroke(200,200,200,100) // Creates Pause Sign/Symbol When A Key Is Pressed
+  strokeWeight(10)
+  fill(150,150,150,100)
+  ellipse(200,200,200,200)
+  line(170,170,170,230)
+  line(230,170,230,230)
+  
+}
+
+function mouseDragged() {
+  circlesize = 50
+  background(100 + opacity3) // When Mouse Button Pressed And Moving Background Fades
+  stroke(200,200,200,100 - opacity3)
+  strokeWeight(10)
+  fill(150,150,150,100 - opacity3)
+  ellipse(200,200,200,200)
+  line(170,170,170,230)
+  line(230,170,230,230)
+  opacity3 = opacity3 + 5
+  
+ 
+  fill(red,green,blue,opacity3) // When Mouse Button Pressed And Moving Circle Appears On Top Of Cursor
+  ellipse(mouseX,mouseY,circlesize,circlesize)
+  
+  if (opacity3 > 255) {
+    opacity3 = 0
+  }
+  
+}
+function mouseMoved() {
+  circlesize = 0 // Creates Pulse Effect With Ellipse When Mouse Is Moved
+  strokeWeight(8)
+  stroke(255,50,50,opacity)
+  ellipse(200,200,200+scale,200+scale)
+  fill(100 + opacity3 )
+  ellipse(200,200,192+scale,192+scale)
+  scale++
+  opacity = opacity - 10
+  
+  if (opacity < 0) {  // If the opacity of the first ellipse < 0, the second ellipse appears
+  strokeWeight(8)
+  stroke(255,100,100,opacity2)
+  ellipse(200,200,100+scale2,100+scale2)
+  fill(100 + opacity3)
+  ellipse(200,200,92+scale2,92+scale2)
+  scale2++
+  opacity2 = opacity2 - 10
+
+  }  
+  
+  if (opacity2 < 0) {  // If the opacity of the second ellipse < 0, the third ellipse appears
+  strokeWeight(8)
+  stroke(255,50,50,opacity4)
+  ellipse(200,200,300+scale3,300+scale3)
+  fill(100 + opacity3)
+  ellipse(200,200,192+scale3,192+scale3)
+  scale3++
+  opacity4 = opacity4 - 10
+
+  }  
+  
+  if (opacity4 < 0) {  // If the opacity of the third ellipse < 0, the fourth ellipse appears
+  strokeWeight(8)
+  stroke(255,50,50,opacity5)
+  ellipse(200,200,150+scale3,150+scale3)
+  fill(100 + opacity3)
+  ellipse(200,200,42+scale3,42+scale3)
+  scale3++
+  opacity5 = opacity5 - 10
+
+  
+  }
+  
+  if (opacity5 < 0) { // If the opacity of the fourth ellipse < 0, it repeats
+    opacity = 255
+    scale = 5
+    scale2 = 5
+    scale3 = 5
+    opacity4 = 255
+    opacity2 = 255
+    opacity5 = 255
+}
+}
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/DevonL2108/p5js/blob/master/interaction.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
